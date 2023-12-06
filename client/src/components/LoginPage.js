@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import './LoginPage.css'; 
 import logo from './logo.png';
+import Footer from './Footer'
 
 const Header = () => (
   <header>
@@ -111,11 +112,6 @@ const SignupForm = ({ onLogin }) => {
   );
 };
 
-const Footer = () => (
-  <footer>
-    <p>&copy; {new Date().getFullYear()} Driver Crash Course</p>
-  </footer>
-);
 
 const LoginPage = () => {
   const navigate = useNavigate(); // Create an instance of useNavigate
@@ -130,7 +126,14 @@ const LoginPage = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Login failed. Please check your credentials.');
+        const data = await response.json();
+        if (data.msg && data.msg.includes('Invalid password')) {
+          throw new Error('Wrong credentials. Please check you password.');
+        }else if (data.msg && data.msg.includes('User not found')){
+          throw new Error('User not found. Please sign up first.')
+        }else{
+          throw new Error('Some unknown error.')
+        }
       }
 
       const data = await response.json();
