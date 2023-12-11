@@ -12,7 +12,7 @@ h1.page-title {
     margin: 100px;
 }
 
-.button-container {
+.admin-button-container {
     display: flex;
     width: 100%;
 }
@@ -40,7 +40,7 @@ h1.page-title {
 }
 
 @media (max-width: 768px) {
-    .button-container {
+    .admin-button-container {
         flex-direction: column;
     }
 

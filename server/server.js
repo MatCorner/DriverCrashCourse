@@ -1,16 +1,20 @@
 import express, { json } from "express";
 import routes from "./routes/routes.js";
 import mongoose from "mongoose";
-import config from "config";
+import dotenv from "dotenv";
+import cors from "cors";
 
 async function main() {
   const app = express();
+  dotenv.config({ path: "./config.env" });
 
-  const port = config.get("server.port") || 5000;
+  const port = process.env.PORT || 5000;
 
-  await mongoose.connect(config.get("mongodb.URI"));
+  await mongoose.connect(process.env.MONGODB_URI);
 
+  app.use(cors());
   app.use(json());
+  app.use(express.static("public"));
 
   app.use("/api", routes);
 

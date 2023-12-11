@@ -5,11 +5,7 @@ import './LoginPage.css';
 import logo from './logo.png';
 import Footer from './Footer'
 
-const Header = () => (
-  <header>
-    <img src={logo} alt="Logo" width="40px" />
-  </header>
-);
+
 
 const LoginForm = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -21,6 +17,7 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
+    
     <div className="login-form">
       <form onSubmit={handleLoginSubmit}>
         <h2>Login</h2>
@@ -154,7 +151,9 @@ const LoginPage = () => {
 
   return (
     <div>
-      <Header />
+      <header className="login-header">
+        <img src={logo} alt="Logo" className="login-logo" />
+      </header>
       <div className="forms-container">
         <LoginForm onLogin={handleLogin} />
         <div className="vertical-line"></div>

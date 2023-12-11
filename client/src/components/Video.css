@@ -1,0 +1,67 @@
+.Resources {
+  height:100vh;
+  width: 100%;
+  color: #2b4a4f;
+  text-align: center;
+  background-color: #e3eee4;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Set min-height to ensure content is at least the height of the viewport */
+}
+
+.row {
+  display: flex;
+  justify-content: space-around; /* Distribute space around items */
+  width: 100%;
+}
+
+.image-container {
+  width: 23%; /* Adjust as needed */
+  margin: 5px 5px 5px 80px; /* Add margin between images and adjust the right margin */
+}
+
+.driver-licence-image {
+  width: 60%; /* Set the width of the image to 100% of its container */
+  height: 50%; /* Maintain aspect ratio */
+  border: 2px solid #ccc; /* Border styling */
+  border-radius: 8px; /* Border-radius styling */
+  display: block; /* Remove extra space below the image */
+  margin: 0 auto; /* Center the image within its container */
+}
+
+.Car-image{
+  width:60%;
+  height:50%;
+  border: 2px solid #ccc; /* Border styling */
+  border-radius: 8px; /* Border-radius styling */
+  display: block; /* Remove extra space below the image */
+  margin: 0 auto; /* Center the image within its container */
+}
+
+.Appointment-image{
+  width:60%;
+  height:60%;
+  border: 2px solid #ccc; /* Border styling */
+  border-radius: 8px; /* Border-radius styling */
+  display: block; /* Remove extra space below the image */
+  margin: 0 auto; /* Center the image within its container */
+}
+
+.RoadSafety-image{
+  width:60%;
+  height:60%;
+  border: 2px solid #ccc; /* Border styling */
+  border-radius: 8px; /* Border-radius styling */
+  display: block; /* Remove extra space below the image */
+  margin: 0 auto; /* Center the image within its container */
+}
+
+span {
+  font-size: 10px;
+  color: #555;
+}
